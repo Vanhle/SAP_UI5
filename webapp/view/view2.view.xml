@@ -1,0 +1,178 @@
+<mvc:View
+    controllerName="project2.controller.DynamicPageFreeStyle"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+>
+    <f:DynamicPage
+        id="dynamicPageId"
+        headerExpanded="{/headerExpanded}"
+        toggleHeaderOnTitleClick="{/titleClickable}"
+    >
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+                <f:heading>
+                    <Title
+                        id="_IDGenTitle"
+                        text="Log Details Account"
+                    />
+                </f:heading>
+                <f:breadcrumbs>
+                    <Breadcrumbs id="_IDGenBreadcrumbs">
+                        <Link
+                            id="_IDGenLink"
+                            text="Home"
+                            press="onHomePress"
+                        />
+                        <Link
+                            id="_IDGenLink1"
+                            text="Overview Account"
+                        />
+                    </Breadcrumbs>
+                </f:breadcrumbs>
+                <f:expandedContent>
+                    <Label
+                        id="_IDGenLabel"
+                        text="LEARN-256"
+                    />
+                </f:expandedContent>
+                <!-- <f:snappedContent>
+						<Label id="_IDGenLabel1" text="This is a subheading"/>
+					</f:snappedContent> -->
+                <!-- <f:snappedTitleOnMobile>
+						<Title id="_IDGenTitle1" text="This is a subheading"/>
+					</f:snappedTitleOnMobile> -->
+                <!-- <f:content>
+						<OverflowToolbar id="_IDGenOverflowToolbar">
+							<GenericTag id="_IDGenGenericTag" text="SR"
+								status="Error"
+								press="onPressOpenPopover"
+								design="StatusIconHidden">
+								<ObjectNumber id="_IDGenObjectNumber" number="2"
+									unit="M"
+									emphasized="false"
+									state="Error"/>
+							</GenericTag>
+						</OverflowToolbar>
+					</f:content> -->
+                <!-- <f:actions>
+						<Button id="_IDGenButton"
+								text="Edit"
+								type="Emphasized"
+								press="toggleAreaPriority"/>
+						<Button id="_IDGenButton1"
+								text="Delete"
+								type="Transparent"/>
+						<Button id="_IDGenButton2"
+								text="Copy"
+								type="Transparent"/>
+						<Button id="_IDGenButton3"
+								text="Toggle Footer"
+								type="Transparent"
+								press="onToggleFooter"/>
+						<Button id="_IDGenButton4"
+								icon="sap-icon://action"
+								type="Transparent"/>
+						<Button id="_IDGenButton5"
+								text="Button with layoutData"
+								type="Transparent"
+								press="onPressOpenPopover">
+							<layoutData>
+								<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData" priority="AlwaysOverflow" closeOverflowOnInteraction="false" />
+							</layoutData>
+						</Button>
+					</f:actions> -->
+            </f:DynamicPageTitle>
+        </f:title>
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader
+                id="_IDGenDynamicPageHeader"
+                pinnable="true"
+            >
+                <layout:HorizontalLayout
+                    id="_IDGenHorizontalLayout"
+                    allowWrapping="true"
+                >
+                    <layout:VerticalLayout
+                        id="_IDGenVerticalLayout"
+                        class="sapUiMediumMarginEnd"
+                    >
+                        <ObjectAttribute
+                            id="_IDGenObjectAttribute"
+                            title="Last login times"
+                        />
+                        <ObjectStatus
+                            id="_IDGenObjectAttribute2"
+                            text="2/8/2025 11:20:20"
+                            state="Success"
+                        />
+                        <!-- <ObjectAttribute id="_IDGenObjectAttribute1" title="Halway" text="23L"/>
+							<ObjectAttribute id="_IDGenObjectAttribute2" title="Rack" text="34"/> -->
+                    </layout:VerticalLayout>
+
+                    <layout:VerticalLayout id="_IDGenVerticalLayout1">
+                        <ObjectAttribute
+                            id="_IDGenObjectAttribute3"
+                            title="Status"
+                        />
+                        <ObjectStatus
+                            id="_IDGenObjectStatus"
+                            text="Active"
+                            state="Success"
+                        />
+                    </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="idLogTable"
+                items="{
+                    path: '/LogCollection',
+                    sorter: {
+                        path: 'datetime',
+                        descending: true
+                    }
+                }"
+                class="sapFDynamicPageAlignContent"
+                width="auto">
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar">
+                        <Title id="_IDGenTitle2" text="Log" level="H2"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn">
+                        <Text id="_IDGenText" text="Datetime" />
+                    </Column>
+                    <Column id="_IDGenColumn1" minScreenWidth="Tablet" demandPopin="true">
+                        <Text id="_IDGenText1" text="IP Address" />
+                    </Column>
+                    <Column id="_IDGenColumn2" minScreenWidth="Tablet" demandPopin="true">
+                        <Text id="_IDGenText2" text="Severity" />
+                    </Column>						
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem">
+                        <cells>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier" title="{datetime}"  />
+                            <Text id="_IDGenText4" text="{ipAddress}" />
+                            <Text id="_IDGenText5" text="{severity}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+        <!-- DynamicPage Footer -->
+        <!-- <f:footer>
+				<OverflowToolbar id="_IDGenOverflowToolbar1">
+					<ToolbarSpacer id="_IDGenToolbarSpacer"/>
+					<Button id="_IDGenButton8" type="Accept" text="Accept"/>
+					<Button id="_IDGenButton9" type="Reject" text="Reject"/>
+				</OverflowToolbar>
+			</f:footer> -->
+    </f:DynamicPage>
+</mvc:View>

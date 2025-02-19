@@ -7,8 +7,8 @@
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "Security Audit Log Dashboard",
-        "description": "Dashboard for monitoring security audit logs",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",

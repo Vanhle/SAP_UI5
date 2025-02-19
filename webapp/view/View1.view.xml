@@ -17,7 +17,7 @@
                 <!-- Card for Number of Logins Today -->
                 <f:Card id="loginCard">
                     <f:header>
-                        <card:Header id="_IDGenHeader1" title="Logins Todayzzzzz" />
+                        <card:Header id="_IDGenHeader1" title="Logins Today" />
                     </f:header>
                     <f:content>
                         <FlexBox id="_IDGenFlexBox" 

@@ -2,68 +2,15 @@
     controllerName="project2.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.f"
-    xmlns:cards="sap.f.cards"
-    xmlns:layout="sap.ui.layout"
-    xmlns:card="sap.f.cards"
->
+    xmlns:layout="sap.ui.layout">
+
     <Page id="page" title="Security Audit Log Dashboard">
         <content>
-            <layout:Grid
-                id="cardContainer"
-                defaultSpan="XL6 L6 M12 S12"
-                class="sapUiSmallMargin">
-                
-                <!-- Card for Number of Logins Today -->
-                <f:Card id="loginCard">
-                    <f:header>
-                        <card:Header id="_IDGenHeader1" title="Logins Today" />
-                    </f:header>
-                    <f:content>
-                        <FlexBox id="_IDGenFlexBox" 
-                            alignItems="Center" 
-                            justifyContent="Center" 
-                            height="100%">
-                            <Text 
-                                id="loginCount" 
-                                text="0" 
-                                class="sapUiMediumMargin"
-                                textAlign="Center"
-                                wrapping="false"/>
-                        </FlexBox>
-                    </f:content>
-                </f:Card>
-
-                <!-- Card for High Severity Count -->
-                <f:Card id="severityCard">
-                    <f:header>
-                        <card:Header id="_IDGenCardHeader" title="High Severity Today" />
-                    </f:header>
-                    <f:content>
-                        <FlexBox id="_IDGenFlexBox1" 
-                            alignItems="Center" 
-                            justifyContent="Center" 
-                            height="100%">
-                            <Text 
-                                id="severityCount" 
-                                text="0" 
-                                class="sapUiMediumMargin"
-                                textAlign="Center"
-                                wrapping="false"/>
-                        </FlexBox>
-                    </f:content>
-                </f:Card>
-            </layout:Grid>
-
-            <!-- Lấy dữ liệu trong model/data.json và View1.controller.js -->
             <Table 
                 id="loginTable" 
                 inset="false" 
                 class="sapUiResponsiveMargin" 
-                items="{loginData>/logins}"
-                growing="true"
-                growingThreshold="10"
-                growingScrollToLoad="false">
+                items="{logData>/results}">
                 <headerToolbar>
                     <Toolbar id="_IDGenToolbar1">
                         <Title id="_IDGenTitle1" text="Login Details" />
@@ -77,33 +24,28 @@
                 </headerToolbar>
                 <columns>
                     <Column id="_IDGenColumn4">
-                        <Text id="_IDGenText3" text="Account" />
+                        <Text id="_IDGenText3" text="Index" />
                     </Column>
                     <Column id="_IDGenColumn5">
-                        <Text id="_IDGenText6" text="IP Address" />
+                        <Text id="_IDGenText6" text="Sale Date" />
                     </Column>
                     <Column id="_IDGenColumn6">
-                        <Text id="_IDGenText7" text="Login Time" />
+                        <Text id="_IDGenText7" text="Sale Time" />
                     </Column>
                     <Column id="_IDGenColumn7">
-                        <Text id="_IDGenText11" text="Actions" />
+                        <Text id="_IDGenText8" text="User" />
                     </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem1">
-                        <cells>
-                            <Text id="_IDGenText8" text="{loginData>account}" />
-                            <Text id="_IDGenText9" text="{loginData>ip}" />
-                            <Text id="_IDGenText10" text="{loginData>loginTime}" />
-                            <Button 
-                                id="navButton" 
-                                icon="sap-icon://arrow-right" 
-                                press="onNavToView2"
-                                tooltip="Navigate to Detail account"/>
-                        </cells>
+                        <Text id="_IDGenText9" text="{logData>Indx}" />
+                        <Text id="_IDGenText10" text="{logData>SalDate}" />
+                        <Text id="_IDGenText11" text="{logData>SalTime}" />
+                        <Text id="_IDGenText12" text="{logData>Slguser}" />
                     </ColumnListItem>
                 </items>
             </Table>
         </content>
     </Page>
-</mvc:View> 
+    
+</mvc:View>

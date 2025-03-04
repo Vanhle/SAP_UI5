@@ -53,52 +53,61 @@
                 "settings": {
                     "bundleName": "project2.i18n.i18n"
                 }
-            }
-        },
-        "resources": {
-            "css": [
-                {
-                    "uri": "css/style.css"
-                }
-            ]
-        },
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "viewType": "XML",
-                "viewPath": "project2.view",
-                "controlId": "app",
-                "controlAggregation": "pages"
             },
-            "routes": [
-                {
-                    "pattern": "",
-                    "name": "RouteView1",
-                    "target": "TargetView1"
-                },
-                {
-                    "pattern": "view2",
-                    "name": "RouteView2",
-                    "target": "TargetView2"
+            "salog": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "serviceUrl": "/sap/opu/odata/sap/ZL253_TEST_SM20_SEGW_SRV/",
+                    "user": "LEARN-256",
+                    "password": "mich123321",
+                    "useBatch": false
                 }
-            ],
-            "targets": {
-                "TargetView1": {
+            },
+            "resources": {
+                "css": [
+                    {
+                        "uri": "css/style.css"
+                    }
+                ]
+            },
+            "routing": {
+                "config": {
+                    "routerClass": "sap.m.routing.Router",
                     "viewType": "XML",
-                    "viewId": "View1",
-                    "viewName": "View1"
+                    "viewPath": "project2.view",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
                 },
-                "TargetView2": {
-                    "viewType": "XML",
-                    "viewId": "View2",
-                    "viewName": "View2"
+                "routes": [
+                    {
+                        "pattern": "",
+                        "name": "RouteView1",
+                        "target": "TargetView1"
+                    },
+                    {
+                        "pattern": "view2",
+                        "name": "RouteView2",
+                        "target": "TargetView2"
+                    }
+                ],
+                "targets": {
+                    "TargetView1": {
+                        "viewType": "XML",
+                        "viewId": "View1",
+                        "viewName": "View1"
+                    },
+                    "TargetView2": {
+                        "viewType": "XML",
+                        "viewId": "View2",
+                        "viewName": "View2"
+                    }
                 }
+            },
+            "rootView": {
+                "viewName": "project2.view.App",
+                "type": "XML",
+                "id": "App"
             }
-        },
-        "rootView": {
-            "viewName": "project2.view.App",
-            "type": "XML",
-            "id": "App"
         }
     }
 }
